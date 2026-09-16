@@ -135,6 +135,8 @@ button,input{font:inherit;color:inherit}
 .dp-pip,.dp-drop,.pl-cap{transform-box:view-box;transition:transform .5s var(--ease-io),opacity .5s}
 .dp-drop{transform-origin:100px 116px}
 .pl-cap{transform-origin:100px 74px}
+/* po GSAP CSS perėjimai išjungiami, kitaip kiekvienas kadras pradeda naują transition ir gestas niekada nepasiekia tikslo */
+html.gs .sc-a,html.gs .sc-b,html.gs .dp-pip,html.gs .dp-drop,html.gs .pl-cap{transition:none}
 /* be GSAP: gestas užvedus pele */
 @media (hover:hover){
   html:not(.gs) .col:hover .sc-a{transform:rotate(13deg)}
