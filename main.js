@@ -60,7 +60,7 @@
   var introDone = false;
   var introEls = qa('.intro'), letters = qa('.mast .ch'), cols = qa('.col'), dekEls = qa('.dek, .addr');
   if (performance.now() > 1200) {
-    gsap.set(introEls, { autoAlpha: 1, y: 0, clearProps: 'transform' });
+    gsap.set(introEls, { autoAlpha: 1, y: 0 });
     introDone = true;
   } else {
     var shapes = [];

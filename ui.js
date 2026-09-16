@@ -61,19 +61,20 @@
   function hh(h) { return h + ':00'; }
   function status() {
     var n = vilniusNow(), t = n.h + n.min / 60, today = HOURS[n.day], next = HOURS[(n.day + 1) % 7];
-    if (today && t >= today[0] && t < today[1]) return { cls: 'open', text: 'Dabar atidaryta · iki ' + hh(today[1]) };
-    if (today && t < today[0]) return { cls: 'closed', text: 'Šiandien atidaroma ' + hh(today[0]) };
-    return { cls: 'closed', text: 'Šiandien uždaryta · rytoj nuo ' + hh(next[0]) };
+    if (today && t >= today[0] && t < today[1]) return { cls: 'open', text: 'Dabar atidaryta · iki ' + hh(today[1]), short: 'Atidaryta iki ' + hh(today[1]) };
+    if (today && t < today[0]) return { cls: 'closed', text: 'Šiandien atidaroma ' + hh(today[0]), short: 'Atidaroma ' + hh(today[0]) };
+    return { cls: 'closed', text: 'Šiandien uždaryta · rytoj nuo ' + hh(next[0]), short: 'Uždaryta · rytoj ' + hh(next[0]) };
   }
   function paintBadges() {
-    var s = status();
+    var s = status(), narrow = window.innerWidth < 400;
     qa('.badge').forEach(function (b) {
       b.classList.remove('open', 'closed'); b.classList.add(s.cls);
-      var t = q('[id^="badgeText"]', b); if (t) t.textContent = s.text;
+      var t = q('[id^="badgeText"]', b); if (t) t.textContent = (narrow && b.closest('.hdr')) ? s.short : s.text;
     });
   }
   paintBadges();
   setInterval(paintBadges, 60000);
+  var rsz; window.addEventListener('resize', function () { clearTimeout(rsz); rsz = setTimeout(paintBadges, 150); });
 
   /* ---------- antraštė: ženklas pasirodo, kai antraštinis užrašas išslenka ---------- */
   var hdr = q('#hdr'), mast = q('.mast');
@@ -90,7 +91,7 @@
       es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
     }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
     rv.forEach(function (el) { io.observe(el); });
-    setTimeout(function () { rv.forEach(function (el) { el.classList.add('in'); }); }, 4000);
+    setTimeout(function () { rv.forEach(function (el) { el.classList.add('in'); }); }, 2500);
   } else { rv.forEach(function (el) { el.classList.add('in'); }); }
 
   /* ---------- rubrikos viršelyje: visa kolonėlė veda į savo skyrių ---------- */
@@ -102,7 +103,7 @@
   });
 
   /* ---------- registracija ---------- */
-  var form = q('#regForm'), msgOut = q('#msgOut'), smsBtn = q('#smsBtn'), callBtn = q('#callBtn'), clearBtn = q('#clearBtn');
+  var form = q('#regForm'), msgOut = q('#msgOut'), smsBtn = q('#smsBtn'), callBtn = q('#callBtn'), clearBtn = q('#clearBtn'), fbBtn = q('#fbBtn');
   var fsMaster = q('#fsMaster'), masterChips = q('#masterChips'), soonBox = q('#soonBox'), fsWhen = q('#fsWhen'), fieldName = q('#fieldName'), nm = q('#nm');
   var stage = q('#stage'), outNote = q('#outNote');
   var state = { dir: '', master: null, when: '', time: '', name: '' };
@@ -127,8 +128,8 @@
       soonBox.hidden = true; soonBox.innerHTML = '';
     } else {
       var who = d ? d.whoGen : 'Meistrų';
-      soonBox.innerHTML = '<p>' + I.esc(who) + ' kontaktus papildysime netrukus. Kol kas parašykite salonui Facebook arba užsukite: ' + I.esc(I.SALON.address) + '.</p>' +
-        '<div class="acts"><a class="btn btn-ghost" href="' + I.SALON.facebook + '" target="_blank" rel="noopener">Rašyti salonui Facebook</a><a class="btn btn-ghost" href="' + I.SALON.maps + '" target="_blank" rel="noopener">Kaip atvykti</a></div>';
+      soonBox.innerHTML = '<p>' + I.esc(who) + ' kontaktus paskelbsime netrukus. Kol kas registracija per salono „Facebook“ arba vietoje: ' + I.esc(I.SALON.address) + '.</p>' +
+        '<div class="acts"><a class="btn btn-ghost" href="' + I.SALON.facebook + '" target="_blank" rel="noopener">Rašyti per „Facebook“</a><a class="btn btn-ghost" href="' + I.SALON.maps + '" target="_blank" rel="noopener">Kaip atvykti</a></div>';
       soonBox.hidden = false;
     }
     fsMaster.hidden = !list.length && !d;
@@ -139,28 +140,29 @@
 
   function setLink(a, href) {
     if (href) { a.setAttribute('href', href); a.removeAttribute('aria-disabled'); a.removeAttribute('role'); }
-    else { a.removeAttribute('href'); a.setAttribute('aria-disabled', 'true'); a.setAttribute('role', 'link'); }
+    else { a.removeAttribute('href'); a.removeAttribute('aria-label'); a.setAttribute('aria-disabled', 'true'); a.setAttribute('role', 'link'); }
   }
   function render() {
-    var m = state.master, has = !!(m && m.phone);
+    var m = state.master, has = !!(m && m.phone), soon = !!(state.dir && !has);
     fsWhen.hidden = !has; fieldName.hidden = !has;
+    smsBtn.hidden = soon; callBtn.hidden = soon; if (fbBtn) fbBtn.hidden = !soon;
     if (!state.dir) {
       msgOut.textContent = EMPTY; msgOut.classList.add('empty');
       setLink(smsBtn, ''); setLink(callBtn, '');
       outNote.textContent = 'Žinutė atsidarys jūsų telefono SMS programoje. Prieš siųsdami galėsite ją pataisyti.';
     } else if (!has) {
       var d = I.dirOf(state.dir);
-      msgOut.textContent = (d ? d.whoGen : 'Meistrų') + ' kontaktų dar nėra. Kai tik gausime, čia atsiras skambučio ir SMS mygtukai.';
+      msgOut.textContent = 'Registracija ' + (d ? d.whoPas : 'pas meistrus') + ' kol kas per salono „Facebook“ arba vietoje.';
       msgOut.classList.add('empty');
       setLink(smsBtn, ''); setLink(callBtn, '');
-      outNote.textContent = 'Kol kas: Facebook žinutė salonui arba apsilankymas adresu ' + I.SALON.address + '.';
+      outNote.textContent = 'Salonas: ' + I.SALON.address + '. ' + (d ? d.whoGen : 'Meistrų') + ' kontaktus paskelbsime netrukus.';
     } else {
       var text = I.buildText(state);
       if (msgOut.textContent !== text) msgOut.textContent = text;
       msgOut.classList.remove('empty');
       setLink(smsBtn, I.smsHref(m.phone, text)); setLink(callBtn, 'tel:' + m.phone);
       callBtn.setAttribute('aria-label', 'Skambinti ' + m.phoneText);
-      outNote.textContent = 'Žinutė išsiųs ' + m.role.toLowerCase() + ' ' + m.name + ' numeriu ' + m.phoneText + '. Prieš siųsdami galėsite ją pataisyti.';
+      outNote.textContent = 'Žinutė bus išsiųsta ' + (m.roleDat || m.role.toLowerCase()) + ' ' + (m.nameDat || m.name) + ' numeriu ' + m.phoneText + '. Prieš siųsdami galėsite ją pataisyti.';
     }
     clearBtn.hidden = !(state.dir || state.when || state.time || state.name);
   }

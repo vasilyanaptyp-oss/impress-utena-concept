@@ -5,7 +5,8 @@
    Laukai: dir – krypties id (kirpykla | kosmetologija | manikiuras); role – kaip vadinti kortelėje;
    name – vardas (be pavardės), nameAcc – vardas galininku SMS žinutei („pas Viktoriją“);
    phone – tel: formatu be tarpų, phoneText – kaip rodyti; tuščias phone = kortelė-užpildas
-   „Kontaktą papildysime netrukus“ be jokių nuorodų; services – ką daro; photo – nebūtina. */
+   „Kontaktus paskelbsime netrukus“ be jokių nuorodų; services – ką daro; photo/photoSet – nebūtina;
+   roleDat/nameDat – naudininkas („Žinutė bus išsiųsta kosmetologei Viktorijai“). */
 (function (root) {
   'use strict';
 
@@ -19,22 +20,22 @@
   };
 
   var DIRECTIONS = [
-    { id: 'kirpykla', title: 'Kirpykla', who: 'Kirpėjai', whoGen: 'Kirpėjų', tool: 'scissors',
-      services: ['Kirpimai', 'Plaukų dažymas', 'Šukuosenos'], sms: 'kirpyklos paslaugai' },
-    { id: 'kosmetologija', title: 'Kosmetologija', who: 'Kosmetologė', whoGen: 'Kosmetologės', tool: 'dropper',
+    { id: 'kosmetologija', title: 'Kosmetologija', who: 'Kosmetologė', whoGen: 'Kosmetologės', whoPas: 'pas kosmetologę', tool: 'dropper',
       services: ['HIFU', 'Lazerinė epiliacija', 'Veido hidrodermabrazija', 'Procedūros su spikulėmis', 'Pigmentacija ir kapiliarai'], sms: 'kosmetologinei procedūrai' },
-    { id: 'manikiuras', title: 'Manikiūras', who: 'Manikiūro meistrai', whoGen: 'Manikiūro meistrų', tool: 'polish',
+    { id: 'kirpykla', title: 'Kirpykla', who: 'Kirpėjai', whoGen: 'Kirpėjų', whoPas: 'pas kirpėjus', tool: 'scissors',
+      services: ['Kirpimai', 'Plaukų dažymas', 'Šukuosenos'], sms: 'kirpimui ar dažymui' },
+    { id: 'manikiuras', title: 'Manikiūras', who: 'Manikiūro meistrai', whoGen: 'Manikiūro meistrų', whoPas: 'pas manikiūro meistrus', tool: 'polish',
       services: ['Manikiūras', 'Gelinis lakavimas'], sms: 'manikiūrui' }
   ];
 
   var MASTERS = [
     { id: 'kirpejai', dir: 'kirpykla', role: 'Kirpėjai', name: '', nameAcc: '', phone: '', phoneText: '',
       services: ['Kirpimai', 'Plaukų dažymas', 'Šukuosenos'] },
-    { id: 'viktorija', dir: 'kosmetologija', role: 'Kosmetologė', name: 'Viktorija', nameAcc: 'Viktoriją',
+    { id: 'viktorija', dir: 'kosmetologija', role: 'Kosmetologė', roleDat: 'kosmetologei', name: 'Viktorija', nameAcc: 'Viktoriją', nameDat: 'Viktorijai',
       phone: '+37061261703', phoneText: '+370 612 61703',
       photo: 'img/viktorija-kabinetas-720.webp', photoAlt: 'Kosmetologė Viktorija savo kabinete',
-      /* 16.09.2026 jos laiškais: HIFU, epiliacija, hidrofeisas; spikulės, kompleksinės atjauninimo, pigmentacija, kapiliarai lazeriu.
-         Odos valymas, limfodrenažas, IPL – iš info.lt kortelės. Mezoterapija, PRP, Jordi Shape – tik jai patvirtinus. */
+      photoSet: ['img/viktorija-kabinetas-480.webp 480w', 'img/viktorija-kabinetas-720.webp 720w', 'img/viktorija-kabinetas-1000.webp 1000w'],
+      /* paslaugų sąrašas suderintas su Viktorija 2026-09 */
       services: ['HIFU', 'Lazerinė epiliacija (diodinis lazeris)', 'Veido hidrodermabrazija', 'Procedūros su spikulėmis',
         'Kompleksinės veido odos atjauninimo procedūros', 'Pigmentacijos procedūros', 'Kapiliarų šalinimas lazeriu',
         'Odos valymas', 'Limfodrenažas', 'IPL'] },
@@ -57,9 +58,10 @@
     var when = [];
     if (o.when) when.push(o.when);
     if (o.time) when.push(o.time);
-    if (when.length) s += ' Man tiktų ' + when.join(', ') + '.';
-    else s += ' Kada būtų laisvo laiko?';
-    s += o.name ? ' Ačiū, ' + o.name.trim() + '.' : ' Ačiū!';
+    if (when.length) s += ' Man tiktų ' + when.join(' ') + '.';
+    else s += ' Kada turėtumėte laisvo laiko?';
+    var nm = (o.name || '').trim();
+    s += nm ? ' Ačiū! ' + nm : ' Ačiū!';
     return s;
   }
   function smsHref(phone, text) { return 'sms:' + phone + '?&body=' + encodeURIComponent(text); }
@@ -72,13 +74,14 @@
       return '<article class="mcard mcard-soon" id="m-' + esc(m.id) + '" data-master="' + esc(m.id) + '">' +
         '<div class="mcard-glyph" aria-hidden="true"><svg viewBox="0 0 200 260" width="72" height="94"><use href="#t-' + esc(d.tool || 'scissors') + '"></use></svg></div>' +
         '<div class="mcard-body"><p class="role">' + esc(m.role) + '</p>' +
-        '<h4 class="mname soon">Kontaktą papildysime netrukus</h4>' + svc +
-        '<p class="soon-note">Kol kas parašykite salonui Facebook arba užsukite adresu ' + esc(SALON.address) + '.</p>' +
-        '<div class="acts"><a class="btn btn-ghost" href="' + SALON.facebook + '" target="_blank" rel="noopener">Rašyti salonui Facebook<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a></div>' +
+        '<h4 class="mname soon">Kontaktus paskelbsime netrukus</h4>' + svc +
+        '<p class="soon-note">Kol kas registracija per salono „Facebook“ arba vietoje: ' + esc(SALON.address) + '.</p>' +
+        '<div class="acts"><a class="btn btn-ghost" href="' + SALON.facebook + '" target="_blank" rel="noopener">Rašyti per „Facebook“<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a></div>' +
         '</div></article>';
     }
     var text = buildText({ dir: m.dir, master: m, when: '', time: '', name: '' });
-    var photo = m.photo ? '<div class="mcard-photo"><img src="' + esc(m.photo) + '" srcset="img/viktorija-kabinetas-480.webp 480w, img/viktorija-kabinetas-720.webp 720w, img/viktorija-kabinetas-1000.webp 1000w" sizes="(min-width: 900px) 440px, calc(100vw - 32px)" width="720" height="720" alt="' + esc(m.photoAlt || '') + '" loading="lazy" decoding="async"></div>' : '';
+    var srcset = m.photoSet && m.photoSet.length ? ' srcset="' + esc(m.photoSet.join(', ')) + '" sizes="(min-width: 900px) 440px, calc(100vw - 32px)"' : '';
+    var photo = m.photo ? '<div class="mcard-photo"><img src="' + esc(m.photo) + '"' + srcset + ' width="720" height="720" alt="' + esc(m.photoAlt || '') + '" loading="lazy" decoding="async"></div>' : '';
     return '<article class="mcard' + (m.photo ? ' has-photo' : '') + '" id="m-' + esc(m.id) + '" data-master="' + esc(m.id) + '">' + photo +
       '<div class="mcard-body"><p class="role">' + esc(m.role) + '</p>' +
       '<h4 class="mname">' + esc(m.name) + '</h4>' + svc +
