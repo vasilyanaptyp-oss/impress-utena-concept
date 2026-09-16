@@ -1,0 +1,4 @@
+_src/
+*.log
+*.exit
+*.pid

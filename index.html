@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Impress. Grožio salonas Utenoje: kirpykla, kosmetologija, manikiūras</title>
+<meta name="description" content="Grožio salonas „Impress“, J. Basanavičiaus g. 49A, Utena. Kirpykla, kosmetologija ir manikiūras po vienu stogu. Registracija telefonu arba SMS žinute tiesiai meistrui.">
+<meta name="theme-color" content="#F7F6F4">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="Impress. Grožio salonas Utenoje">
+<meta property="og:description" content="Koncepcija, neoficiali svetainė. Kirpykla, kosmetologija ir manikiūras. J. Basanavičiaus g. 49A, Utena.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/bodoni-moda-400-900-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/bodoni-moda-400-900-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/albert-sans-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/albert-sans-400-700-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.className += ' js';</script>
+<style>
+/* Impress, Utena. Koncepcija „Viršelis“: salono pavadinimas kaip žurnalo antraštė, trys rubrikos, trys įrankiai. */
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 900;font-display:swap;src:url(fonts/bodoni-moda-400-900-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Bodoni Moda";font-style:normal;font-weight:400 900;font-display:swap;src:url(fonts/bodoni-moda-400-900-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:400 900;font-display:swap;src:url(fonts/bodoni-moda-italic-400-900-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Bodoni Moda";font-style:italic;font-weight:400 900;font-display:swap;src:url(fonts/bodoni-moda-italic-400-900-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Albert Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/albert-sans-400-700-latin-ext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Albert Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/albert-sans-400-700-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+/* metriniai pakaitalai, kad keičiantis šriftui puslapis nešokinėtų */
+@font-face{font-family:"Bodoni Fallback";src:local("Times New Roman"),local("Times");size-adjust:94%;ascent-override:92%;descent-override:26%}
+@font-face{font-family:"Albert Fallback";src:local("Arial");size-adjust:98%}
+
+:root{
+  --paper:#F7F6F4;--panel:#FDFDFC;--ink:#17151A;--ink-2:#5B575F;--ink-3:#8A868E;
+  --line:rgba(23,21,26,.13);--line-2:rgba(23,21,26,.24);
+  --acc:#C8175D;--acc-deep:#9E1049;--acc-soft:#F7E4EC;
+  --display:"Bodoni Moda","Bodoni Fallback",serif;--text:"Albert Sans","Albert Fallback",Arial,sans-serif;
+  --ease:cubic-bezier(.23,1,.32,1);--ease-io:cubic-bezier(.77,0,.175,1);
+  --pad:clamp(16px,4vw,56px);--r-card:24px;--r-in:16px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--text);font-size:17px;line-height:1.55;font-optical-sizing:auto;-webkit-font-smoothing:antialiased;overflow-x:clip}
+@media (min-width:900px){body{font-size:18px}}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,h4,p,ul,ol,dl,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+button,input{font:inherit;color:inherit}
+.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wrap{max-width:1360px;margin:0 auto;padding-inline:var(--pad)}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
+::selection{background:var(--acc-soft)}
+
+/* tipografika */
+.h2{font-family:var(--display);font-weight:500;font-size:clamp(38px,4.8vw,66px);line-height:1;letter-spacing:-.005em;text-wrap:balance}
+.h3{font-family:var(--display);font-weight:500;font-size:clamp(30px,3.2vw,42px);line-height:1.05}
+.lead{font-size:clamp(17px,1.35vw,20px);color:var(--ink-2);max-width:56ch;margin-top:18px;text-wrap:pretty}
+
+/* mygtukai: visi interaktyvūs elementai – piliulės; kortelės 24 px; laukeliai 12 px */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;border:1px solid transparent;background:transparent;font-weight:600;font-size:16px;line-height:1.2;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background-color .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease),transform .16s var(--ease),box-shadow .2s var(--ease)}
+.btn .i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn:active{transform:scale(.97)}
+.btn-primary{background:var(--acc);color:#fff;box-shadow:0 10px 26px -14px rgba(200,23,93,.6)}
+.btn-primary:hover{background:var(--acc-deep)}
+.btn-ghost{border-color:var(--line-2);color:var(--ink)}
+.btn-ghost:hover{background:rgba(23,21,26,.05)}
+.btn-text{padding-inline:12px;color:var(--ink-2);font-weight:500}
+.btn-text:hover{color:var(--ink)}
+.btn .num{font-weight:500;opacity:.92}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+
+/* būsenos ženkliukas */
+.badge{display:inline-flex;align-items:center;gap:9px;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line-2);font-size:14px;font-weight:500;color:var(--ink);white-space:nowrap}
+.badge .dot{width:8px;height:8px;border-radius:50%;background:var(--ink-3);flex:none;transition:background-color .3s}
+.badge.open .dot{background:var(--acc)}
+.badge.closed .dot{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink-3)}
+
+/* antraštė */
+.hdr{position:sticky;top:0;z-index:40;background:rgba(247,246,244,.84);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.hdr.scrolled{border-bottom-color:var(--line)}
+.hdr-in{height:64px;display:flex;align-items:center;gap:22px}
+.wm{display:inline-flex;align-items:center;min-height:44px;font-family:var(--display);font-weight:600;font-size:21px;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;line-height:1;transition:opacity .28s var(--ease),transform .28s var(--ease)}
+.js .hdr:not(.docked) .wm{opacity:0;transform:translateY(8px);pointer-events:none}
+.nav{display:none;gap:4px;margin-left:8px}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:999px;font-size:15px;font-weight:500;color:var(--ink-2);text-decoration:none;transition:color .2s,background-color .2s}
+.nav a:hover{color:var(--ink);background:rgba(23,21,26,.05)}
+.hdr .badge{margin-left:auto}
+.hdr-cta{display:none;min-height:44px;padding:0 18px;font-size:15px}
+@media (min-width:900px){.nav{display:flex}.hdr-cta{display:inline-flex}}
+
+/* viršelis */
+.cover{padding-top:clamp(10px,2vw,28px)}
+.mast{font-family:var(--display);font-weight:600;font-size:clamp(56px,16.6vw,236px);line-height:.92;letter-spacing:.035em;text-transform:uppercase;text-align:center;padding-left:.035em;font-variant-numeric:lining-nums}
+.mast-word{display:block;white-space:nowrap}
+.ch{display:inline-block}
+.cover-row{display:grid;gap:14px 40px;align-items:end;margin-top:clamp(14px,2.6vw,30px)}
+.dek{font-family:var(--display);font-weight:400;font-size:clamp(22px,2.7vw,36px);line-height:1.18;letter-spacing:-.005em;max-width:24ch;text-wrap:balance}
+.dek i{font-style:italic;color:var(--acc)}
+.addr{display:inline-flex;align-items:center;gap:8px;color:var(--ink-2);font-size:15px}
+.addr .i{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media (min-width:760px){.cover-row{grid-template-columns:1fr auto}}
+
+/* trys rubrikos */
+.cols{display:grid;margin-top:clamp(36px,6vw,80px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.col{position:relative;display:grid;grid-template-columns:108px 1fr;grid-template-rows:auto auto auto;gap:6px 20px;padding:24px 0;border-top:1px solid var(--line);cursor:pointer}
+.col:first-child{border-top:0}
+.col .tool{grid-row:1/4;width:108px;height:auto;color:var(--ink);align-self:start}
+.col h2{font-family:var(--display);font-weight:500;font-size:clamp(30px,3.4vw,46px);line-height:1;letter-spacing:-.005em;transition:color .25s var(--ease)}
+.col .svc{display:flex;flex-wrap:wrap;gap:4px 12px;color:var(--ink-2);font-size:15.5px}
+.col .svc li+li::before{content:"·";margin-right:12px;color:var(--ink-3)}
+.col .more{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-weight:600;font-size:15.5px;text-decoration:none;color:var(--ink);justify-self:start;margin-top:2px}
+.col .more .i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s var(--ease)}
+@media (hover:hover){.col:hover h2{color:var(--acc)}.col:hover .more .i{transform:translate(2px,-2px)}}
+@media (min-width:720px){
+  .cols{grid-template-columns:repeat(3,1fr)}
+  .col{display:flex;flex-direction:column;gap:18px;min-height:clamp(430px,47vw,540px);padding:clamp(28px,3.4vw,48px) clamp(20px,2.6vw,36px) clamp(26px,3vw,40px);border-top:0;border-left:1px solid var(--line)}
+  .col:first-child{border-left:0;padding-left:0}
+  .col:last-child{padding-right:0}
+  .col .tool{width:clamp(160px,15.2vw,224px)}
+  .col h2{margin-top:auto}
+  .col .svc{flex-direction:column;gap:2px}
+  .col .svc li+li::before{content:none}
+}
+/* įrankiai: linijos paveldi storį iš svg, todėl mažuose ženkliukuose storis kitas */
+.tool{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.tool [class*="f-"]{fill:currentColor}
+.tool .f-1{fill-opacity:.06}.tool .f-2{fill-opacity:.11}.tool .f-3{fill-opacity:.17}.tool .f-9{fill-opacity:.9}
+.tool .acc{fill:var(--acc);fill-opacity:1;stroke:none}
+.tool .acc-soft{fill:var(--acc);fill-opacity:.24;stroke:none}
+.tool .acc-full{fill:var(--acc);fill-opacity:.78;stroke:none}
+.tool .thin{stroke-width:1;stroke-opacity:.45}
+.tool .heavy{stroke-width:4.4}
+.sc-a,.sc-b{transform-box:view-box;transform-origin:100px 132px;transition:transform .45s var(--ease-io)}
+.dp-pip,.dp-drop,.pl-cap{transform-box:view-box;transition:transform .5s var(--ease-io),opacity .5s}
+.dp-drop{transform-origin:100px 116px}
+.pl-cap{transform-origin:100px 74px}
+/* be GSAP: gestas užvedus pele */
+@media (hover:hover){
+  html:not(.gs) .col:hover .sc-a{transform:rotate(13deg)}
+  html:not(.gs) .col:hover .sc-b{transform:rotate(-13deg)}
+  html:not(.gs) .col:hover .dp-drop{transform:translateY(58px);opacity:0}
+  html:not(.gs) .col:hover .dp-pip{transform:translateY(-6px)}
+  html:not(.gs) .col:hover .pl-cap{transform:translateY(-62px) rotate(-18deg)}
+}
+
+/* skyriai */
+.sec{padding-block:clamp(64px,9vw,128px)}
+.masters .lead{margin-bottom:clamp(28px,4vw,56px)}
+.group{display:grid;gap:22px 48px;padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--line)}
+.group:last-child{border-bottom:1px solid var(--line)}
+.group-h{display:flex;flex-direction:column;gap:8px}
+.group-svc{color:var(--ink-2);font-size:15.5px}
+.cards{display:grid;gap:18px}
+@media (min-width:900px){.group{grid-template-columns:minmax(0,4fr) minmax(0,8fr)}.group-h{position:sticky;top:88px;align-self:start}}
+
+/* meistro kortelė: dvigubas rėmelis (išorinis dėklas + vidinis paviršius) */
+.mcard{background:rgba(23,21,26,.045);border-radius:var(--r-card);padding:6px;box-shadow:inset 0 0 0 1px rgba(23,21,26,.05)}
+.mcard-body{background:var(--panel);border-radius:calc(var(--r-card) - 6px);padding:clamp(22px,3vw,36px);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 22px 50px -34px rgba(23,21,26,.35)}
+.mcard.has-photo{display:grid;gap:6px}
+.mcard-photo{border-radius:calc(var(--r-card) - 6px);overflow:hidden;aspect-ratio:1;background:#DAD6D2}
+.mcard-photo img{width:100%;height:100%;object-fit:cover}
+.role{font-size:14px;font-weight:600;letter-spacing:.02em;color:var(--ink-2)}
+.mname{font-family:var(--display);font-weight:500;font-size:clamp(34px,3.8vw,52px);line-height:1;margin-top:6px}
+.mname.soon{font-size:clamp(24px,2.3vw,30px);line-height:1.12;font-style:italic;font-weight:400;text-wrap:balance}
+.svc{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.mcard .svc li{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border-radius:999px;background:rgba(23,21,26,.06);font-size:14.5px;font-weight:500;color:var(--ink)}
+.mcard-soon{background:transparent;box-shadow:none;border:1px dashed var(--line-2);padding:6px;display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start}
+.mcard-soon .mcard-body{background:transparent;box-shadow:none;padding:clamp(16px,2.4vw,26px)}
+.mcard-glyph{padding:22px 0 0 22px;color:var(--ink-3)}
+.mcard-glyph svg{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.mcard-glyph [class*="f-"]{fill:currentColor}
+.mcard-glyph .f-1,.mcard-glyph .f-2,.mcard-glyph .f-3{fill-opacity:.1}.mcard-glyph .f-9{fill-opacity:.8}
+.mcard-glyph .acc,.mcard-glyph .acc-soft,.mcard-glyph .acc-full{fill:currentColor;fill-opacity:.35;stroke:none}
+.mcard-glyph .thin{stroke-opacity:.4}
+.soon-note{margin-top:14px;color:var(--ink-2);font-size:15.5px;max-width:44ch}
+@media (min-width:640px){.mcard.has-photo{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}}
+@media (max-width:479px){.mcard-soon{grid-template-columns:1fr}.mcard-glyph{display:none}}
+
+/* trys žingsniai */
+.steps .step-list{display:grid;gap:34px 40px;margin-top:clamp(32px,5vw,64px)}
+.step{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;align-items:start}
+.stepnum{position:relative;display:block;font-family:var(--display);font-weight:400;font-size:clamp(84px,9.6vw,148px);line-height:.86;width:.62em;grid-row:1/3;font-variant-numeric:lining-nums}
+.num-base{color:rgba(23,21,26,.14)}
+.num-ink{position:absolute;inset:0;color:var(--acc);opacity:0;transition:opacity .6s var(--ease)}
+.step h3{font-family:var(--display);font-weight:500;font-size:clamp(24px,2.3vw,32px);line-height:1.1;padding-top:.28em}
+.step p{color:var(--ink-2);max-width:34ch}
+.step.in .num-ink{opacity:1}
+html.gs .num-ink{transition:none}
+@media (min-width:720px){.steps .step-list{grid-template-columns:repeat(3,1fr)}.step{grid-template-columns:1fr;gap:10px}.stepnum{grid-row:auto;width:auto;margin-bottom:6px}}
+
+/* registracija */
+.reg-grid{display:grid;gap:36px 56px}
+.fs{border:0;padding:0;margin:0;margin-top:26px;min-width:0}
+.fs legend{padding:0;font-weight:600;font-size:15px;color:var(--ink-2);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips+.chips{margin-top:8px}
+.chip{position:relative;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line-2);background:var(--panel);font-weight:500;font-size:15.5px;cursor:pointer;user-select:none;transition:background-color .18s var(--ease),color .18s var(--ease),border-color .18s var(--ease),transform .16s var(--ease)}
+.chip input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.chip:hover{border-color:var(--ink)}
+.chip:active{transform:scale(.97)}
+.chip:has(input:checked){background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip:has(input:focus-visible){outline:2px solid var(--acc);outline-offset:3px}
+.chip .mini{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.chip .mini [class*="f-"]{fill:currentColor;fill-opacity:.15}
+.chip .mini .acc,.chip .mini .acc-soft,.chip .mini .acc-full{fill:currentColor;fill-opacity:.5;stroke:none}
+.field{margin-top:26px;max-width:360px}
+.field label{display:block;font-weight:600;font-size:15px;color:var(--ink-2);margin-bottom:8px}
+.field label span{font-weight:400}
+.field input{width:100%;min-height:48px;padding:0 16px;border-radius:12px;border:1px solid var(--line-2);background:var(--panel);transition:border-color .18s}
+.field input:focus{border-color:var(--ink);outline:2px solid var(--acc);outline-offset:2px}
+.soon-box{margin-top:6px;padding:16px 18px;border-radius:16px;background:var(--acc-soft);color:var(--ink);font-size:15.5px;max-width:52ch}
+.soon-box .acts{margin-top:12px}
+.soon-box .btn{min-height:44px;background:var(--panel)}
+.reg-out{background:var(--ink);color:var(--paper);border-radius:28px;padding:6px}
+.reg-out-in{background:#211E26;border-radius:22px;padding:clamp(22px,3vw,32px);box-shadow:inset 0 1px 0 rgba(255,255,255,.07);min-height:100%}
+.stage{position:relative;width:104px;height:135px;color:var(--paper)}
+.stage .tool{position:absolute;inset:0;width:104px;height:135px;visibility:hidden}
+.stage .tool.on{visibility:visible}
+.out-label{margin-top:22px;font-size:14px;font-weight:600;color:rgba(247,246,244,.62)}
+.msg{margin-top:10px;font-family:var(--display);font-weight:400;font-size:clamp(21px,2vw,26px);line-height:1.28;min-height:3.9em;text-wrap:pretty}
+.msg.empty{color:rgba(247,246,244,.55);font-style:italic}
+.reg-out .btn-ghost{border-color:rgba(247,246,244,.32);color:var(--paper)}
+.reg-out .btn-ghost:hover{background:rgba(247,246,244,.08)}
+.reg-out .btn-text{color:rgba(247,246,244,.7)}
+.reg-out .btn-text:hover{color:var(--paper)}
+.reg-out .btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+.out-note{margin-top:16px;font-size:14.5px;color:rgba(247,246,244,.62);max-width:44ch}
+.nojs-note{margin-top:20px;padding:16px 18px;border-radius:16px;background:var(--acc-soft);max-width:52ch}
+html.js .nojs-note{display:none}
+html:not(.js) .reg-out{display:none}
+@media (min-width:900px){.reg-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}.reg-out{position:sticky;top:88px;align-self:start}}
+
+/* kaip atvykti */
+.where-grid{display:grid;gap:36px 56px;align-items:start}
+.big-addr{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(36px,5.2vw,74px);line-height:1;margin-top:22px;letter-spacing:-.005em}
+.big-addr b{font-style:normal;font-weight:500}
+.hours{border-top:1px solid var(--line);padding-top:18px}
+.hours h3{font-size:15px;font-weight:600;color:var(--ink-2)}
+.hours dl{margin-top:8px}
+.hours dl>div{display:grid;grid-template-columns:5.5em 1fr;padding:10px 0;border-bottom:1px solid var(--line);font-size:clamp(18px,1.6vw,22px)}
+.hours dt{color:var(--ink-2);font-weight:500}
+.hours dd{margin:0;font-family:var(--display);font-size:1.15em;font-variant-numeric:lining-nums tabular-nums}
+.hours .badge{margin-top:18px}
+.note{margin-top:16px;color:var(--ink-2);font-size:15.5px;max-width:40ch}
+@media (min-width:900px){.where-grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}.hours{border-top:0;padding-top:12px}}
+
+.ftr{padding:28px 0 calc(28px + 84px);border-top:1px solid var(--line);color:var(--ink-2);font-size:14.5px}
+.ftr .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between}
+.ftr a{text-decoration-thickness:1px;text-underline-offset:3px}
+@media (min-width:900px){.ftr{padding-bottom:28px}}
+
+/* telefono juosta */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(247,246,244,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line);transition:transform .32s var(--ease),visibility 0s linear 0s}
+.bar .btn{width:100%;min-height:52px;font-size:17px}
+.bar.away{transform:translateY(112%);visibility:hidden;transition:transform .32s var(--ease),visibility 0s linear .32s}
+@media (min-width:900px){.bar{display:none}}
+
+/* pasirodymas slenkant (IntersectionObserver + laikmatis-draudimas) */
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+/* įžanga: elementai paslėpti tik su JS; jei GSAP neateina, CSS animacija juos parodo */
+.js .intro{opacity:0;animation:appear .7s var(--ease) 1.3s forwards}
+.js.nogs .intro{animation-delay:0s}
+.js.gs .intro{animation:none}
+.js .ch{transform:translateY(.22em)}
+@keyframes appear{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){
+  .js .intro,.js .ch{opacity:1;transform:none;animation:none}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .btn,.chip,.col h2,.col .more .i,.sc-a,.sc-b,.dp-pip,.dp-drop,.pl-cap,.wm{transition:none}
+  html:not(.gs) .col:hover .sc-a,html:not(.gs) .col:hover .sc-b,html:not(.gs) .col:hover .dp-drop,html:not(.gs) .col:hover .dp-pip,html:not(.gs) .col:hover .pl-cap{transform:none;opacity:1}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
+    <a class="wm" href="#top" aria-label="Į viršų: Impress">Impress</a>
+    <nav class="nav" aria-label="Skyriai">
+      <a href="#meistrai">Meistrai</a>
+      <a href="#registracija">Registracija</a>
+      <a href="#kontaktai">Kaip atvykti</a>
+    </nav>
+    <p class="badge" id="badge"><span class="dot" aria-hidden="true"></span><span id="badgeText">I–V 9–19 · VI–VII 9–16</span></p>
+    <a class="btn btn-primary hdr-cta" href="#registracija">Registruotis</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="cover" aria-labelledby="mastTitle">
+    <div class="wrap">
+      <h1 class="mast" id="mastTitle"><span class="mast-word" aria-hidden="true"><span class="ch intro">I</span><span class="ch intro">M</span><span class="ch intro">P</span><span class="ch intro">R</span><span class="ch intro">E</span><span class="ch intro">S</span><span class="ch intro">S</span></span><span class="sr">Impress, grožio salonas Utenoje</span></h1>
+      <div class="cover-row">
+        <p class="dek intro">Kirpykla, kosmetologija ir manikiūras <i>po vienu stogu.</i></p>
+        <p class="addr intro"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>J. Basanavičiaus g. 49A, Utena</p>
+      </div>
+
+      <div class="cols" id="kryptys">
+        <div class="col intro" data-dir="kirpykla">
+          <svg class="tool" data-tool="scissors" viewBox="0 0 200 260" aria-hidden="true">
+            <g class="sc-a">
+              <path class="f-3" d="M95 136 L103 121 C109 88 113 56 108 20 C102 54 99 92 99 130 Z"/>
+              <path class="heavy" d="M98 138 L85 177"/>
+              <circle class="f-1" cx="73" cy="192" r="16"/>
+            </g>
+            <g class="sc-b">
+              <path class="f-3" d="M105 136 L97 121 C91 88 87 56 92 20 C98 54 101 92 101 130 Z"/>
+              <path class="heavy" d="M102 138 L115 177"/>
+              <circle class="f-1" cx="127" cy="192" r="16"/>
+              <path d="M140 200 C150 202 153 213 145 219"/>
+            </g>
+            <circle class="acc" cx="100" cy="132" r="4.6"/>
+          </svg>
+          <h2>Kirpykla</h2>
+          <ul class="svc"><li>Kirpimai</li><li>Plaukų dažymas</li><li>Šukuosenos</li></ul>
+          <a class="more" href="#kirpykla">Meistrai ir registracija<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a>
+        </div>
+        <div class="col intro" data-dir="kosmetologija">
+          <svg class="tool" data-tool="dropper" viewBox="0 0 200 260" aria-hidden="true">
+            <path class="f-2" d="M66 134 C66 120 74 116 84 116 L116 116 C126 116 134 120 134 134 L134 226 C134 234 128 238 120 238 L80 238 C72 238 66 234 66 226 Z"/>
+            <path class="acc-soft" d="M70 178 L130 178 L130 226 C130 232 126 234 120 234 L80 234 C74 234 70 232 70 226 Z"/>
+            <rect class="f-1" x="84" y="100" width="32" height="16" rx="3"/>
+            <path class="thin" d="M88 152 L112 152 M88 160 L106 160 M88 168 L110 168"/>
+            <path class="thin" d="M72 140 L72 226"/>
+            <g class="dp-pip">
+              <ellipse class="f-3" cx="100" cy="34" rx="14" ry="12"/>
+              <rect class="f-2" x="90" y="44" width="20" height="12" rx="3"/>
+              <path class="f-1" d="M97 56 L97 94 L100 104 L103 94 L103 56 Z"/>
+            </g>
+            <path class="acc dp-drop" d="M100 107 C96 113 93 116 93 120 A7 7 0 0 0 107 120 C107 116 104 113 100 107 Z"/>
+          </svg>
+          <h2>Kosmetologija</h2>
+          <ul class="svc"><li>HIFU</li><li>Lazerinė epiliacija</li><li>Veido hidrodermabrazija</li><li>Odos valymas</li></ul>
+          <a class="more" href="#kosmetologija">Meistrai ir registracija<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a>
+        </div>
+        <div class="col intro" data-dir="manikiuras">
+          <svg class="tool" data-tool="polish" viewBox="0 0 200 260" aria-hidden="true">
+            <path class="f-1" d="M60 152 C60 134 70 128 82 128 L118 128 C130 128 140 134 140 152 L140 220 C140 234 132 238 122 238 L78 238 C68 238 60 234 60 220 Z"/>
+            <path class="acc-full" d="M64 170 L136 170 L136 220 C136 231 130 234 122 234 L78 234 C70 234 64 231 64 220 Z"/>
+            <path class="thin" d="M72 142 L72 230 M128 142 L128 230"/>
+            <rect class="f-2" x="86" y="112" width="28" height="18" rx="2"/>
+            <g class="pl-cap">
+              <rect class="f-9" x="82" y="34" width="36" height="80" rx="9"/>
+              <path d="M100 114 L100 194"/>
+              <path class="f-9" d="M96 194 L104 194 L102 212 L98 212 Z"/>
+            </g>
+          </svg>
+          <h2>Manikiūras</h2>
+          <ul class="svc"><li>Manikiūras</li><li>Gelinis lakavimas</li></ul>
+          <a class="more" href="#manikiuras">Meistrai ir registracija<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec masters" id="meistrai" aria-labelledby="meistraiTitle">
+    <div class="wrap">
+      <h2 class="h2 rv" id="meistraiTitle">Meistrai</h2>
+      <p class="lead rv">Salonas bendro telefono neturi. Skambinkite arba rašykite tiesiai meistrui, su kuriuo norite susitarti.</p>
+
+      <div class="group rv" id="kirpykla">
+        <div class="group-h"><h3 class="h3">Kirpykla</h3><p class="group-svc">Kirpimai, plaukų dažymas, šukuosenos</p></div>
+        <div class="cards">
+<!-- masters:kirpykla -->
+<article class="mcard mcard-soon" id="m-kirpejai" data-master="kirpejai"><div class="mcard-glyph" aria-hidden="true"><svg viewBox="0 0 200 260" width="72" height="94"><use href="#t-scissors"></use></svg></div><div class="mcard-body"><p class="role">Kirpėjai</p><h4 class="mname soon">Kontaktą papildysime netrukus</h4><ul class="svc"><li>Kirpimai</li><li>Plaukų dažymas</li><li>Šukuosenos</li></ul><p class="soon-note">Kol kas parašykite salonui Facebook arba užsukite adresu J. Basanavičiaus g. 49A, Utena.</p><div class="acts"><a class="btn btn-ghost" href="https://www.facebook.com/salonasimpress/" target="_blank" rel="noopener">Rašyti salonui Facebook<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a></div></div></article>
+<!-- /masters -->
+        </div>
+      </div>
+
+      <div class="group rv" id="kosmetologija">
+        <div class="group-h"><h3 class="h3">Kosmetologija</h3><p class="group-svc">Aparatinės ir odos priežiūros procedūros</p></div>
+        <div class="cards">
+<!-- masters:kosmetologija -->
+<article class="mcard has-photo" id="m-viktorija" data-master="viktorija"><div class="mcard-photo"><img src="img/viktorija-kabinetas-720.webp" srcset="img/viktorija-kabinetas-480.webp 480w, img/viktorija-kabinetas-720.webp 720w, img/viktorija-kabinetas-1000.webp 1000w" sizes="(min-width: 900px) 440px, calc(100vw - 32px)" width="720" height="720" alt="Kosmetologė Viktorija savo kabinete" loading="lazy" decoding="async"></div><div class="mcard-body"><p class="role">Kosmetologė</p><h4 class="mname">Viktorija</h4><ul class="svc"><li>HIFU</li><li>Lazerinė epiliacija (diodinis lazeris)</li><li>Veido hidrodermabrazija</li><li>Odos valymas</li><li>Limfodrenažas</li><li>Kapiliarų šalinimas</li><li>IPL</li><li>Veido atjauninimas</li></ul><div class="acts"><a class="btn btn-primary" href="tel:+37061261703"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Skambinti <span class="num">+370 612 61703</span></a><a class="btn btn-ghost js-sms" data-master="viktorija" href="sms:+37061261703?&body=Sveiki!%20Nor%C4%97%C4%8Diau%20registruotis%20%E2%80%9EImpress%E2%80%9C%20salone%20kosmetologinei%20proced%C5%ABrai%20pas%20Viktorij%C4%85.%20Kada%20b%C5%ABt%C5%B3%20laisvo%20laiko%3F%20A%C4%8Di%C5%AB!"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>SMS</a></div></div></article>
+<!-- /masters -->
+        </div>
+      </div>
+
+      <div class="group rv" id="manikiuras">
+        <div class="group-h"><h3 class="h3">Manikiūras</h3><p class="group-svc">Manikiūras, gelinis lakavimas</p></div>
+        <div class="cards">
+<!-- masters:manikiuras -->
+<article class="mcard mcard-soon" id="m-manikiuro-meistrai" data-master="manikiuro-meistrai"><div class="mcard-glyph" aria-hidden="true"><svg viewBox="0 0 200 260" width="72" height="94"><use href="#t-polish"></use></svg></div><div class="mcard-body"><p class="role">Manikiūro meistrai</p><h4 class="mname soon">Kontaktą papildysime netrukus</h4><ul class="svc"><li>Manikiūras</li><li>Gelinis lakavimas</li></ul><p class="soon-note">Kol kas parašykite salonui Facebook arba užsukite adresu J. Basanavičiaus g. 49A, Utena.</p><div class="acts"><a class="btn btn-ghost" href="https://www.facebook.com/salonasimpress/" target="_blank" rel="noopener">Rašyti salonui Facebook<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a></div></div></article>
+<!-- /masters -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec steps" id="kaip" aria-labelledby="kaipTitle">
+    <div class="wrap">
+      <h2 class="h2 rv" id="kaipTitle">Trys žingsniai iki vizito</h2>
+      <ol class="step-list">
+        <li class="step rv"><span class="stepnum" aria-hidden="true"><span class="num-base">1</span><span class="num-ink">1</span></span><h3>Pasirenkate kryptį ir meistrą</h3><p>Kirpykla, kosmetologija ar manikiūras: kiekvienas meistras turi savo kortelę su numeriu.</p></li>
+        <li class="step rv"><span class="stepnum" aria-hidden="true"><span class="num-base">2</span><span class="num-ink">2</span></span><h3>Skambinate arba rašote SMS</h3><p>Tiesiai meistrui, be tarpininkų. Žinutės tekstą paruošime už jus.</p></li>
+        <li class="step rv"><span class="stepnum" aria-hidden="true"><span class="num-base">3</span><span class="num-ink">3</span></span><h3>Atvykstate</h3><p>J. Basanavičiaus g. 49A, Utena. Darbo dienomis 9–19, savaitgaliais 9–16.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec reg" id="registracija" aria-labelledby="regTitle">
+    <div class="wrap reg-grid">
+      <div class="reg-form">
+        <h2 class="h2 rv" id="regTitle">Registracija</h2>
+        <p class="lead rv">Trys pasirinkimai, ir žinutė paruošta. Be kalendorių ir prisijungimų.</p>
+        <form id="regForm" class="rv" novalidate autocomplete="off">
+          <fieldset class="fs">
+            <legend>Kryptis</legend>
+            <div class="chips" id="dirChips">
+              <label class="chip"><input type="radio" name="dir" value="kirpykla"><svg class="mini" viewBox="0 0 200 260" aria-hidden="true"><use href="#t-scissors"></use></svg>Kirpykla</label>
+              <label class="chip"><input type="radio" name="dir" value="kosmetologija"><svg class="mini" viewBox="0 0 200 260" aria-hidden="true"><use href="#t-dropper"></use></svg>Kosmetologija</label>
+              <label class="chip"><input type="radio" name="dir" value="manikiuras"><svg class="mini" viewBox="0 0 200 260" aria-hidden="true"><use href="#t-polish"></use></svg>Manikiūras</label>
+            </div>
+          </fieldset>
+          <fieldset class="fs" id="fsMaster" hidden>
+            <legend>Meistras</legend>
+            <div class="chips" id="masterChips"></div>
+            <div class="soon-box" id="soonBox" hidden></div>
+          </fieldset>
+          <fieldset class="fs" id="fsWhen" hidden>
+            <legend>Kada</legend>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="when" value="rytoj">Rytoj</label>
+              <label class="chip"><input type="radio" name="when" value="šią savaitę">Šią savaitę</label>
+              <label class="chip"><input type="radio" name="when" value="kitą savaitę">Kitą savaitę</label>
+            </div>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="time" value="iki pietų">Iki pietų</label>
+              <label class="chip"><input type="radio" name="time" value="po pietų">Po pietų</label>
+            </div>
+          </fieldset>
+          <div class="field" id="fieldName" hidden>
+            <label for="nm">Jūsų vardas <span>(nebūtina)</span></label>
+            <input id="nm" name="name" type="text" maxlength="40" autocomplete="given-name">
+          </div>
+        </form>
+        <p class="nojs-note">Registracija be JavaScript: pasirinkite meistrą skyriuje „Meistrai“ ir paspauskite „Skambinti“ arba „SMS“.</p>
+      </div>
+      <aside class="reg-out rv" id="regOut" aria-label="Paruošta žinutė">
+        <div class="reg-out-in">
+          <div class="stage" id="stage" aria-hidden="true"></div>
+          <p class="out-label" id="outLabel">Žinutės tekstas</p>
+          <p class="msg empty" id="msgOut" aria-live="polite">Pasirinkite kryptį, ir žinutė susidėlios čia.</p>
+          <div class="acts">
+            <a class="btn btn-primary" id="smsBtn" aria-disabled="true" role="link"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>Siųsti SMS</a>
+            <a class="btn btn-ghost" id="callBtn" aria-disabled="true" role="link"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Skambinti</a>
+            <button type="button" class="btn btn-text" id="clearBtn" hidden>Išvalyti</button>
+          </div>
+          <p class="out-note" id="outNote">Žinutė atsidarys jūsų telefono SMS programoje. Prieš siųsdami galėsite ją pataisyti.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="sec where" id="kontaktai" aria-labelledby="kontaktaiTitle">
+    <div class="wrap where-grid">
+      <div>
+        <h2 class="h2 rv" id="kontaktaiTitle">Kaip atvykti</h2>
+        <p class="big-addr rv">J. Basanavičiaus g. <b>49A</b>,<br>Utena</p>
+        <div class="acts rv">
+          <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=J.+Basanavi%C4%8Diaus+g.+49A%2C+Utena" target="_blank" rel="noopener"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Maršrutas Google Maps</a>
+          <a class="btn btn-ghost" href="https://www.facebook.com/salonasimpress/" target="_blank" rel="noopener">Facebook<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a>
+        </div>
+      </div>
+      <div class="hours rv">
+        <h3>Darbo laikas</h3>
+        <dl>
+          <div><dt>I–V</dt><dd>9:00–19:00</dd></div>
+          <div><dt>VI–VII</dt><dd>9:00–16:00</dd></div>
+        </dl>
+        <p class="badge" id="badge2"><span class="dot" aria-hidden="true"></span><span id="badgeText2">Laikas pagal Europe/Vilnius</span></p>
+        <p class="note">Bendro salono telefono nėra. Registracija: tiesiai pas meistrą, telefonu arba SMS žinute.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <p>Grožio salonas „Impress“, J. Basanavičiaus g. 49A, Utena</p>
+    <p>Koncepcija. Neoficiali svetainė.</p>
+  </div>
+</footer>
+
+<div class="bar" id="bar"><a class="btn btn-primary" href="#registracija">Registruotis</a></div>
+
+<script src="masters.js"></script>
+<script src="ui.js"></script>
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="main.js" defer></script>
+</body>
+</html>
