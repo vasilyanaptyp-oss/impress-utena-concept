@@ -22,7 +22,7 @@
     { id: 'kirpykla', title: 'Kirpykla', who: 'Kirpėjai', whoGen: 'Kirpėjų', tool: 'scissors',
       services: ['Kirpimai', 'Plaukų dažymas', 'Šukuosenos'], sms: 'kirpyklos paslaugai' },
     { id: 'kosmetologija', title: 'Kosmetologija', who: 'Kosmetologė', whoGen: 'Kosmetologės', tool: 'dropper',
-      services: ['HIFU', 'Lazerinė epiliacija', 'Veido hidrodermabrazija', 'Odos valymas'], sms: 'kosmetologinei procedūrai' },
+      services: ['HIFU', 'Lazerinė epiliacija', 'Veido hidrodermabrazija', 'Procedūros su spikulėmis', 'Pigmentacija ir kapiliarai'], sms: 'kosmetologinei procedūrai' },
     { id: 'manikiuras', title: 'Manikiūras', who: 'Manikiūro meistrai', whoGen: 'Manikiūro meistrų', tool: 'polish',
       services: ['Manikiūras', 'Gelinis lakavimas'], sms: 'manikiūrui' }
   ];
@@ -33,8 +33,11 @@
     { id: 'viktorija', dir: 'kosmetologija', role: 'Kosmetologė', name: 'Viktorija', nameAcc: 'Viktoriją',
       phone: '+37061261703', phoneText: '+370 612 61703',
       photo: 'img/viktorija-kabinetas-720.webp', photoAlt: 'Kosmetologė Viktorija savo kabinete',
-      services: ['HIFU', 'Lazerinė epiliacija (diodinis lazeris)', 'Veido hidrodermabrazija', 'Odos valymas',
-        'Limfodrenažas', 'Kapiliarų šalinimas', 'IPL', 'Veido atjauninimas'] },
+      /* 16.09.2026 jos laiškais: HIFU, epiliacija, hidrofeisas; spikulės, kompleksinės atjauninimo, pigmentacija, kapiliarai lazeriu.
+         Odos valymas, limfodrenažas, IPL – iš info.lt kortelės. Mezoterapija, PRP, Jordi Shape – tik jai patvirtinus. */
+      services: ['HIFU', 'Lazerinė epiliacija (diodinis lazeris)', 'Veido hidrodermabrazija', 'Procedūros su spikulėmis',
+        'Kompleksinės veido odos atjauninimo procedūros', 'Pigmentacijos procedūros', 'Kapiliarų šalinimas lazeriu',
+        'Odos valymas', 'Limfodrenažas', 'IPL'] },
     { id: 'manikiuro-meistrai', dir: 'manikiuras', role: 'Manikiūro meistrai', name: '', nameAcc: '', phone: '', phoneText: '',
       services: ['Manikiūras', 'Gelinis lakavimas'] }
   ];
