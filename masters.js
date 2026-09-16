@@ -5,13 +5,15 @@
    Laukai: dir – krypties id (kirpykla | kosmetologija | manikiuras); role – kaip vadinti kortelėje;
    name – vardas (be pavardės), nameAcc – vardas galininku SMS žinutei („pas Viktoriją“);
    phone – tel: formatu be tarpų, phoneText – kaip rodyti; tuščias phone = kortelė-užpildas
-   „Kontaktus paskelbsime netrukus“ be jokių nuorodų; services – ką daro; photo/photoSet – nebūtina;
+   „Kontaktus paskelbsime netrukus“ su bendru salono numeriu; services – ką daro; photo/photoSet – nebūtina;
    roleDat/nameDat – naudininkas („Žinutė bus išsiųsta kosmetologei Viktorijai“). */
 (function (root) {
   'use strict';
 
   var SALON = {
     name: 'Impress',
+    /* bendras salono numeris (16.09.2026 Viktorija: „telefono nr. nurodykit mano“) */
+    phone: '+37061261703', phoneText: '+370 612 61703',
     address: 'J. Basanavičiaus g. 49A, Utena',
     facebook: 'https://www.facebook.com/salonasimpress/',
     maps: 'https://www.google.com/maps/search/?api=1&query=J.+Basanavi%C4%8Diaus+g.+49A%2C+Utena',
@@ -75,8 +77,8 @@
         '<div class="mcard-glyph" aria-hidden="true"><svg viewBox="0 0 200 260" width="72" height="94"><use href="#t-' + esc(d.tool || 'scissors') + '"></use></svg></div>' +
         '<div class="mcard-body"><p class="role">' + esc(m.role) + '</p>' +
         '<h4 class="mname soon">Kontaktus paskelbsime netrukus</h4>' + svc +
-        '<p class="soon-note">Kol kas registracija per salono „Facebook“ arba vietoje: ' + esc(SALON.address) + '.</p>' +
-        '<div class="acts"><a class="btn btn-ghost" href="' + SALON.facebook + '" target="_blank" rel="noopener">Rašyti per „Facebook“<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a></div>' +
+        '<p class="soon-note">Kol kas registracija telefonu ' + esc(SALON.phoneText) + '.</p>' +
+        '<div class="acts"><a class="btn btn-primary" href="tel:' + esc(SALON.phone) + '"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Skambinti <span class="num">' + esc(SALON.phoneText) + '</span></a></div>' +
         '</div></article>';
     }
     var text = buildText({ dir: m.dir, master: m, when: '', time: '', name: '' });

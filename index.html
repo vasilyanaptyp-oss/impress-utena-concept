@@ -91,8 +91,10 @@ button,input{font:inherit;color:inherit}
 .nav{display:none;gap:4px;margin-left:8px}
 .nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:999px;font-size:15px;font-weight:500;color:var(--ink-2);text-decoration:none;transition:color .2s,background-color .2s}
 .nav a:hover{color:var(--ink);background:rgba(23,21,26,.05)}
-.hdr .badge{margin-left:auto}
+.hdr .badge{margin-left:auto;min-width:0}
 .hdr-cta{display:none;min-height:44px;padding:0 18px;font-size:15px}
+.hdr-call{display:none;min-height:44px;padding:0 16px;font-size:15px}
+@media (min-width:600px){.hdr-call{display:inline-flex}}
 @media (min-width:900px){.nav{display:flex}.hdr-cta{display:inline-flex}}
 
 /* viršelis */
@@ -247,6 +249,9 @@ html:not(.js) .reg-out{display:none}
 .where-grid{display:grid;gap:36px 56px;align-items:start}
 .big-addr{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(36px,5.2vw,74px);line-height:1;margin-top:22px;letter-spacing:-.005em}
 .big-addr b{font-style:normal;font-weight:500}
+.phone{margin-top:18px;font-size:clamp(20px,2vw,26px);font-weight:500}
+.phone a{display:inline-flex;align-items:center;min-height:44px;text-decoration-thickness:1px;text-underline-offset:5px;color:var(--ink)}
+.phone a:hover{color:var(--acc)}
 .hours{border-top:1px solid var(--line);padding-top:18px}
 .hours h3{font-size:15px;font-weight:600;color:var(--ink-2)}
 .hours dl{margin-top:8px}
@@ -264,7 +269,8 @@ html:not(.js) .reg-out{display:none}
 
 /* telefono juosta */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:45;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(247,246,244,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line);transition:transform .32s var(--ease),visibility 0s linear 0s}
-.bar .btn{width:100%;min-height:52px;font-size:17px}
+.bar{display:grid;grid-template-columns:1.15fr 1fr;gap:8px}
+.bar .btn{width:100%;min-height:52px;font-size:17px;padding-inline:12px}
 .bar.away{transform:translateY(112%);visibility:hidden;transition:transform .32s var(--ease),visibility 0s linear .32s}
 @media (min-width:900px){.bar{display:none}}
 
@@ -296,6 +302,7 @@ html:not(.js) .reg-out{display:none}
       <a href="#kontaktai">Kaip atvykti</a>
     </nav>
     <p class="badge" id="badge"><span class="dot" aria-hidden="true"></span><span id="badgeText">I–V 9–19 · VI–VII 9–16</span></p>
+    <a class="btn btn-ghost hdr-call" href="tel:+37061261703"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Skambinti</a>
     <a class="btn btn-primary hdr-cta" href="#registracija">Registruotis</a>
   </div>
 </header>
@@ -369,7 +376,7 @@ html:not(.js) .reg-out{display:none}
   <section class="sec masters" id="meistrai" aria-labelledby="meistraiTitle">
     <div class="wrap">
       <h2 class="h2 rv" id="meistraiTitle">Meistrai</h2>
-      <p class="lead rv">Salonas bendro telefono neturi. Skambinkite arba rašykite tiesiai meistrui, su kuriuo norite susitarti.</p>
+      <p class="lead rv">Skambinkite bendru salono numeriu +370 612 61703 arba tiesiai meistrui, su kuriuo norite susitarti.</p>
 
       <div class="group rv" id="kosmetologija">
         <div class="group-h"><h3 class="h3">Kosmetologija</h3><p class="group-svc">Aparatinės ir odos priežiūros procedūros</p></div>
@@ -384,7 +391,7 @@ html:not(.js) .reg-out{display:none}
         <div class="group-h"><h3 class="h3">Kirpykla</h3><p class="group-svc">Kirpimai, plaukų dažymas, šukuosenos</p></div>
         <div class="cards">
 <!-- masters:kirpykla -->
-<article class="mcard mcard-soon" id="m-kirpejai" data-master="kirpejai"><div class="mcard-glyph" aria-hidden="true"><svg viewBox="0 0 200 260" width="72" height="94"><use href="#t-scissors"></use></svg></div><div class="mcard-body"><p class="role">Kirpėjai</p><h4 class="mname soon">Kontaktus paskelbsime netrukus</h4><ul class="svc"><li>Kirpimai</li><li>Plaukų dažymas</li><li>Šukuosenos</li></ul><p class="soon-note">Kol kas registracija per salono „Facebook“ arba vietoje: J. Basanavičiaus g. 49A, Utena.</p><div class="acts"><a class="btn btn-ghost" href="https://www.facebook.com/salonasimpress/" target="_blank" rel="noopener">Rašyti per „Facebook“<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a></div></div></article>
+<article class="mcard mcard-soon" id="m-kirpejai" data-master="kirpejai"><div class="mcard-glyph" aria-hidden="true"><svg viewBox="0 0 200 260" width="72" height="94"><use href="#t-scissors"></use></svg></div><div class="mcard-body"><p class="role">Kirpėjai</p><h4 class="mname soon">Kontaktus paskelbsime netrukus</h4><ul class="svc"><li>Kirpimai</li><li>Plaukų dažymas</li><li>Šukuosenos</li></ul><p class="soon-note">Kol kas registracija telefonu +370 612 61703.</p><div class="acts"><a class="btn btn-primary" href="tel:+37061261703"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Skambinti <span class="num">+370 612 61703</span></a></div></div></article>
 <!-- /masters -->
         </div>
       </div>
@@ -393,7 +400,7 @@ html:not(.js) .reg-out{display:none}
         <div class="group-h"><h3 class="h3">Manikiūras</h3><p class="group-svc">Manikiūras, gelinis lakavimas</p></div>
         <div class="cards">
 <!-- masters:manikiuras -->
-<article class="mcard mcard-soon" id="m-manikiuro-meistrai" data-master="manikiuro-meistrai"><div class="mcard-glyph" aria-hidden="true"><svg viewBox="0 0 200 260" width="72" height="94"><use href="#t-polish"></use></svg></div><div class="mcard-body"><p class="role">Manikiūro meistrai</p><h4 class="mname soon">Kontaktus paskelbsime netrukus</h4><ul class="svc"><li>Manikiūras</li><li>Gelinis lakavimas</li></ul><p class="soon-note">Kol kas registracija per salono „Facebook“ arba vietoje: J. Basanavičiaus g. 49A, Utena.</p><div class="acts"><a class="btn btn-ghost" href="https://www.facebook.com/salonasimpress/" target="_blank" rel="noopener">Rašyti per „Facebook“<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a></div></div></article>
+<article class="mcard mcard-soon" id="m-manikiuro-meistrai" data-master="manikiuro-meistrai"><div class="mcard-glyph" aria-hidden="true"><svg viewBox="0 0 200 260" width="72" height="94"><use href="#t-polish"></use></svg></div><div class="mcard-body"><p class="role">Manikiūro meistrai</p><h4 class="mname soon">Kontaktus paskelbsime netrukus</h4><ul class="svc"><li>Manikiūras</li><li>Gelinis lakavimas</li></ul><p class="soon-note">Kol kas registracija telefonu +370 612 61703.</p><div class="acts"><a class="btn btn-primary" href="tel:+37061261703"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Skambinti <span class="num">+370 612 61703</span></a></div></div></article>
 <!-- /masters -->
         </div>
       </div>
@@ -404,7 +411,7 @@ html:not(.js) .reg-out{display:none}
     <div class="wrap">
       <h2 class="h2 rv" id="kaipTitle">Trys žingsniai iki vizito</h2>
       <ol class="step-list">
-        <li class="step rv"><span class="stepnum" aria-hidden="true"><span class="num-base">1</span><span class="num-ink">1</span></span><h3>Pasirenkate kryptį ir meistrą</h3><p>Kirpykla, kosmetologija ar manikiūras. Kortelėje – meistro telefonas arba salono „Facebook“.</p></li>
+        <li class="step rv"><span class="stepnum" aria-hidden="true"><span class="num-base">1</span><span class="num-ink">1</span></span><h3>Pasirenkate kryptį ir meistrą</h3><p>Kirpykla, kosmetologija ar manikiūras. Kortelėje – meistro telefonas arba bendras salono numeris.</p></li>
         <li class="step rv"><span class="stepnum" aria-hidden="true"><span class="num-base">2</span><span class="num-ink">2</span></span><h3>Skambinate arba rašote SMS</h3><p>Tiesiai meistrui. Žinutės tekstas susidėlioja pats.</p></li>
         <li class="step rv"><span class="stepnum" aria-hidden="true"><span class="num-base">3</span><span class="num-ink">3</span></span><h3>Atvykstate</h3><p>J. Basanavičiaus g. 49A, Utena. Darbo dienomis 9–19, savaitgaliais 9–16.</p></li>
       </ol>
@@ -457,7 +464,6 @@ html:not(.js) .reg-out{display:none}
           <div class="acts">
             <a class="btn btn-primary" id="smsBtn" aria-disabled="true" role="link"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>Siųsti SMS</a>
             <a class="btn btn-ghost" id="callBtn" aria-disabled="true" role="link"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Skambinti</a>
-            <a class="btn btn-ghost" id="fbBtn" href="https://www.facebook.com/salonasimpress/" target="_blank" rel="noopener" hidden>Rašyti per „Facebook“<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a>
             <button type="button" class="btn btn-text" id="clearBtn" hidden>Išvalyti</button>
           </div>
           <p class="out-note" id="outNote">Žinutė atsidarys jūsų telefono SMS programoje. Prieš siųsdami galėsite ją pataisyti.</p>
@@ -471,6 +477,7 @@ html:not(.js) .reg-out{display:none}
       <div>
         <h2 class="h2 rv" id="kontaktaiTitle">Kaip atvykti</h2>
         <p class="big-addr rv">J. Basanavičiaus g. <b>49A</b>,<br>Utena</p>
+        <p class="phone rv">Tel. <a href="tel:+37061261703">+370 612 61703</a></p>
         <div class="acts rv">
           <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=J.+Basanavi%C4%8Diaus+g.+49A%2C+Utena" target="_blank" rel="noopener"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>Maršrutas Google Maps</a>
           <a class="btn btn-ghost" href="https://www.facebook.com/salonasimpress/" target="_blank" rel="noopener">Facebook<svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 7h10v10M7 17 17 7"/></svg></a>
@@ -483,7 +490,7 @@ html:not(.js) .reg-out{display:none}
           <div><dt>VI–VII</dt><dd>9:00–16:00</dd></div>
         </dl>
         <p class="badge" id="badge2"><span class="dot" aria-hidden="true"></span><span id="badgeText2">I–V 9–19 · VI–VII 9–16</span></p>
-        <p class="note">Salonas bendro telefono neturi. Registracija tiesiai pas meistrą: telefonu arba SMS žinute.</p>
+        <p class="note">Registracija telefonu +370 612 61703 arba SMS žinute tiesiai meistrui.</p>
       </div>
     </div>
   </section>
@@ -496,7 +503,7 @@ html:not(.js) .reg-out{display:none}
   </div>
 </footer>
 
-<nav class="bar" id="bar" aria-label="Registracija"><a class="btn btn-primary" href="#registracija">Registruotis</a></nav>
+<nav class="bar" id="bar" aria-label="Skambinti ir registruotis"><a class="btn btn-primary" href="tel:+37061261703"><svg class="i" aria-hidden="true" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>Skambinti</a><a class="btn btn-ghost" href="#registracija">Registruotis</a></nav>
 
 <script src="masters.js"></script>
 <script src="ui.js"></script>

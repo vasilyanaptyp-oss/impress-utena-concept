@@ -103,7 +103,7 @@
   });
 
   /* ---------- registracija ---------- */
-  var form = q('#regForm'), msgOut = q('#msgOut'), smsBtn = q('#smsBtn'), callBtn = q('#callBtn'), clearBtn = q('#clearBtn'), fbBtn = q('#fbBtn');
+  var form = q('#regForm'), msgOut = q('#msgOut'), smsBtn = q('#smsBtn'), callBtn = q('#callBtn'), clearBtn = q('#clearBtn');
   var fsMaster = q('#fsMaster'), masterChips = q('#masterChips'), soonBox = q('#soonBox'), fsWhen = q('#fsWhen'), fieldName = q('#fieldName'), nm = q('#nm');
   var stage = q('#stage'), outNote = q('#outNote');
   var state = { dir: '', master: null, when: '', time: '', name: '' };
@@ -128,8 +128,8 @@
       soonBox.hidden = true; soonBox.innerHTML = '';
     } else {
       var who = d ? d.whoGen : 'Meistrų';
-      soonBox.innerHTML = '<p>' + I.esc(who) + ' kontaktus paskelbsime netrukus. Kol kas registracija per salono „Facebook“ arba vietoje: ' + I.esc(I.SALON.address) + '.</p>' +
-        '<div class="acts"><a class="btn btn-ghost" href="' + I.SALON.facebook + '" target="_blank" rel="noopener">Rašyti per „Facebook“</a><a class="btn btn-ghost" href="' + I.SALON.maps + '" target="_blank" rel="noopener">Kaip atvykti</a></div>';
+      soonBox.innerHTML = '<p>' + I.esc(who) + ' kontaktus paskelbsime netrukus. Kol kas registracija telefonu ' + I.esc(I.SALON.phoneText) + '.</p>' +
+        '<div class="acts"><a class="btn btn-primary" href="tel:' + I.esc(I.SALON.phone) + '">Skambinti <span class="num">' + I.esc(I.SALON.phoneText) + '</span></a></div>';
       soonBox.hidden = false;
     }
     fsMaster.hidden = !list.length && !d;
@@ -145,17 +145,18 @@
   function render() {
     var m = state.master, has = !!(m && m.phone), soon = !!(state.dir && !has);
     fsWhen.hidden = !has; fieldName.hidden = !has;
-    smsBtn.hidden = soon; callBtn.hidden = soon; if (fbBtn) fbBtn.hidden = !soon;
+    smsBtn.hidden = soon;
     if (!state.dir) {
       msgOut.textContent = EMPTY; msgOut.classList.add('empty');
       setLink(smsBtn, ''); setLink(callBtn, '');
       outNote.textContent = 'Žinutė atsidarys jūsų telefono SMS programoje. Prieš siųsdami galėsite ją pataisyti.';
     } else if (!has) {
       var d = I.dirOf(state.dir);
-      msgOut.textContent = 'Registracija ' + (d ? d.whoPas : 'pas meistrus') + ' kol kas per salono „Facebook“ arba vietoje.';
+      msgOut.textContent = 'Registracija ' + (d ? d.whoPas : 'pas meistrus') + ' kol kas telefonu ' + I.SALON.phoneText + '.';
       msgOut.classList.add('empty');
-      setLink(smsBtn, ''); setLink(callBtn, '');
-      outNote.textContent = 'Salonas: ' + I.SALON.address + '. ' + (d ? d.whoGen : 'Meistrų') + ' kontaktus paskelbsime netrukus.';
+      setLink(smsBtn, ''); setLink(callBtn, 'tel:' + I.SALON.phone);
+      callBtn.setAttribute('aria-label', 'Skambinti ' + I.SALON.phoneText);
+      outNote.textContent = 'Bendras salono numeris. ' + (d ? d.whoGen : 'Meistrų') + ' kontaktus paskelbsime netrukus.';
     } else {
       var text = I.buildText(state);
       if (msgOut.textContent !== text) msgOut.textContent = text;
